@@ -64,6 +64,12 @@ public class ClientProcessingEngine {
         return result;
     }
 
+    public long getInfo() {
+        // TO-DO return the client ID
+
+        return 0;
+    }
+
     public void connect(String serverIP, String serverPort) {
         // TO-DO implement connect to server
         // create a new TCP/IP socket and connect to the server

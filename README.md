@@ -1,4 +1,4 @@
-## CSC 435 Programming Assignment 4 (Fall 2024)
+## CSC 435 Programming Assignment 4 (Winter 2025)
 **Jarvis College of Computing and Digital Media - DePaul University**
 
 **Student**: TO-DO-write-student-name (TO-DO-write-email-address)  
@@ -65,7 +65,7 @@ To run the C++ server (after you build the project) use the following command:
 To run the C++ client (after you build the project) use the following command:
 ```
 ./build/file-retrieval-client
-> <connect | index | search | quit>
+> <connect | get_info | index | search | quit>
 ```
 
 To run the C++ benchmark (after you build the project) use the following command:
@@ -90,6 +90,8 @@ Client 1
 ./build/file-retrieval-client
 > connect 127.0.0.1 12345
 Connection successful!
+> get_info
+Client ID: 1
 ```
 
 Client 2
@@ -97,6 +99,8 @@ Client 2
 ./build/file-retrieval-client
 > connect 127.0.0.1 12345
 Connection successful!
+> get_info
+Client ID: 2
 ```
 
 **Step 3:** list the connected clients on the server:
@@ -104,8 +108,9 @@ Connection successful!
 Server
 ```
 > list
-client1: 127.0.0.1 5746
-client2: 127.0.0.1 9677
+Client ID:IP:PORT
+Client 1:127.0.0.1:5746
+Client 2:127.0.0.1:9677
 ```
 
 **Step 4:** index files from the clients:
@@ -128,22 +133,22 @@ Completed indexing in 2.386 seconds
 
 Client 1
 ```
-> search at
+> search the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-> search Worms
+> search child-like
 Search completed in 2.8 seconds
-Search results (top 10 out of 12):
-* client1:folder4/Document10553.txt:4
-* client1:folder3/Document1043.txt:4
-* client2:folder7/Document1091.txt:3
-* client1:folder3/Document10383.txt:3
-* client2:folder7/folderB/Document10991.txt:2
-* client2:folder8/Document11116.txt:1
-* client2:folder5/folderB/Document10706.txt:1
-* client2:folder5/folderB/Document10705.txt:1
-* client2:folder5/folderA/Document10689.txt:1
-* client1:folder4/Document1051.txt:1
+Search results (top 10 out of 15):
+* Client 2:folder7/Document10926.txt:4
+* Client 1:folder3/Document10379.txt:3
+* Client 2:folder6/Document10866.txt:2
+* Client 2:folder8/Document1108.txt:1
+* Client 2:folder7/folderD/Document11050.txt:1
+* Client 2:folder6/Document10848.txt:1
+* Client 2:folder6/Document1082.txt:1
+* Client 1:folder4/Document10681.txt:1
+* Client 1:folder4/Document10669.txt:1
+* Client 1:folder3/Document10387.txt:1
 ```
 
 Client 2
@@ -151,10 +156,10 @@ Client 2
 > search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* client2:folder7/folderC/Document10998.txt:6
-* client1:folder4/Document10516.txt:3
-* client2:folder8/Document11159.txt:2
-* client2:folder8/Document11157.txt:2
+* Client 2:folder7/folderC/Document10998.txt:6
+* Client 1:folder4/Document10516.txt:3
+* Client 2:folder8/Document11159.txt:2
+* Client 2:folder8/Document11157.txt:2
 ```
 
 **Step 6:** close and disconnect the clients:
@@ -193,29 +198,29 @@ Benchmark
 ./build/file-retrieval-benchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-Searching at
+Searching the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-Searching Worms
+Searching child-like
 Search completed in 2.8 seconds
-Search results (top 10 out of 12):
-* client1:folder4/Document10553.txt:4
-* client1:folder3/Document1043.txt:4
-* client2:folder7/Document1091.txt:3
-* client1:folder3/Document10383.txt:3
-* client2:folder7/folderB/Document10991.txt:2
-* client2:folder8/Document11116.txt:1
-* client2:folder5/folderB/Document10706.txt:1
-* client2:folder5/folderB/Document10705.txt:1
-* client2:folder5/folderA/Document10689.txt:1
-* client1:folder4/Document1051.txt:1
+Search results (top 10 out of 15):
+* Client 2:folder7/Document10926.txt:4
+* Client 1:folder3/Document10379.txt:3
+* Client 2:folder6/Document10866.txt:2
+* Client 2:folder8/Document1108.txt:1
+* Client 2:folder7/folderD/Document11050.txt:1
+* Client 2:folder6/Document10848.txt:1
+* Client 2:folder6/Document1082.txt:1
+* Client 1:folder4/Document10681.txt:1
+* Client 1:folder4/Document10669.txt:1
+* Client 1:folder3/Document10387.txt:1
 Searching distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* client2:folder7/folderC/Document10998.txt:6
-* client1:folder4/Document10516.txt:3
-* client2:folder8/Document11159.txt:2
-* client2:folder8/Document11157.txt:2
+* Client 2:folder7/folderC/Document10998.txt:6
+* Client 1:folder4/Document10516.txt:3
+* Client 2:folder8/Document11159.txt:2
+* Client 2:folder8/Document11157.txt:2
 ```
 
 **Step 3:** close the server:
@@ -240,11 +245,13 @@ mvn package
 To run the Java server (after you build the project) use the following command:
 ```
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalServer <port>
+> <list | quit>
 ```
 
 To run the Java client (after you build the project) use the following command:
 ```
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalClient
+> <connect | get_info | index | search | quit>
 ```
 
 To run the Java benchmark (after you build the project) use the following command:
@@ -269,6 +276,8 @@ Client 1
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalClient
 > connect 127.0.0.1 12345
 Connection successful!
+> get_info
+Client ID: 1
 ```
 
 Client 2
@@ -276,6 +285,8 @@ Client 2
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalClient
 > connect 127.0.0.1 12345
 Connection successful!
+> get_info
+Client ID: 2
 ```
 
 **Step 3:** list the connected clients on the server:
@@ -283,8 +294,9 @@ Connection successful!
 Server
 ```
 > list
-client1: 127.0.0.1 5746
-client2: 127.0.0.1 9677
+Client ID:IP:PORT
+Client 1:127.0.0.1:5746
+Client 2:127.0.0.1:9677
 ```
 
 **Step 4:** index files from the clients:
@@ -307,22 +319,22 @@ Completed indexing in 2.386 seconds
 
 Client 1
 ```
-> search at
+> search the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-> search Worms
+> search child-like
 Search completed in 2.8 seconds
-Search results (top 10 out of 12):
-* client1:folder4/Document10553.txt:4
-* client1:folder3/Document1043.txt:4
-* client2:folder7/Document1091.txt:3
-* client1:folder3/Document10383.txt:3
-* client2:folder7/folderB/Document10991.txt:2
-* client2:folder8/Document11116.txt:1
-* client2:folder5/folderB/Document10706.txt:1
-* client2:folder5/folderB/Document10705.txt:1
-* client2:folder5/folderA/Document10689.txt:1
-* client1:folder4/Document1051.txt:1
+Search results (top 10 out of 15):
+* Client 2:folder7/Document10926.txt:4
+* Client 1:folder3/Document10379.txt:3
+* Client 2:folder6/Document10866.txt:2
+* Client 2:folder8/Document1108.txt:1
+* Client 2:folder7/folderD/Document11050.txt:1
+* Client 2:folder6/Document10848.txt:1
+* Client 2:folder6/Document1082.txt:1
+* Client 1:folder4/Document10681.txt:1
+* Client 1:folder4/Document10669.txt:1
+* Client 1:folder3/Document10387.txt:1
 ```
 
 Client 2
@@ -330,10 +342,10 @@ Client 2
 > search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* client2:folder7/folderC/Document10998.txt:6
-* client1:folder4/Document10516.txt:3
-* client2:folder8/Document11159.txt:2
-* client2:folder8/Document11157.txt:2
+* Client 2:folder7/folderC/Document10998.txt:6
+* Client 1:folder4/Document10516.txt:3
+* Client 2:folder8/Document11159.txt:2
+* Client 2:folder8/Document11157.txt:2
 ```
 
 **Step 6:** close and disconnect the clients:
@@ -372,29 +384,29 @@ Benchmark
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalBenchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-Searching at
+Searching the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-Searching Worms
+Searching child-like
 Search completed in 2.8 seconds
-Search results (top 10 out of 12):
-* client1:folder4/Document10553.txt:4
-* client1:folder3/Document1043.txt:4
-* client2:folder7/Document1091.txt:3
-* client1:folder3/Document10383.txt:3
-* client2:folder7/folderB/Document10991.txt:2
-* client2:folder8/Document11116.txt:1
-* client2:folder5/folderB/Document10706.txt:1
-* client2:folder5/folderB/Document10705.txt:1
-* client2:folder5/folderA/Document10689.txt:1
-* client1:folder4/Document1051.txt:1
+Search results (top 10 out of 15):
+* Client 2:folder7/Document10926.txt:4
+* Client 1:folder3/Document10379.txt:3
+* Client 2:folder6/Document10866.txt:2
+* Client 2:folder8/Document1108.txt:1
+* Client 2:folder7/folderD/Document11050.txt:1
+* Client 2:folder6/Document10848.txt:1
+* Client 2:folder6/Document1082.txt:1
+* Client 1:folder4/Document10681.txt:1
+* Client 1:folder4/Document10669.txt:1
+* Client 1:folder3/Document10387.txt:1
 Searching distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* client2:folder7/folderC/Document10998.txt:6
-* client1:folder4/Document10516.txt:3
-* client2:folder8/Document11159.txt:2
-* client2:folder8/Document11157.txt:2
+* Client 2:folder7/folderC/Document10998.txt:6
+* Client 1:folder4/Document10516.txt:3
+* Client 2:folder8/Document11159.txt:2
+* Client 2:folder8/Document11157.txt:2
 ```
 
 **Step 3:** close the server:

@@ -22,6 +22,7 @@ struct SearchResult {
 
 class ClientProcessingEngine {
     // TO-DO keep track of the connection (socket)
+    // TO-DO keep track of the client ID
 
     public:
         // constructor
@@ -34,6 +35,8 @@ class ClientProcessingEngine {
         
         SearchResult search(std::vector<std::string> terms);
         
+        long getInfo();
+
         void connect(std::string serverIP, std::string serverPort);
         
         void disconnect();
