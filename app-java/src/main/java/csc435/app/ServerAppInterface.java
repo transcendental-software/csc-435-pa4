@@ -32,7 +32,6 @@ public class ServerAppInterface {
             if (command.length() >= 4 && command.substring(0, 4).compareTo("list") == 0) {
                 // TO-DO call the getConnectedClients method from the server to retrieve the clients information
                 // TO-DO print the clients information
-                ArrayList<String> clientsInformation = engine.getConnectedClients();
                 continue;
             }
 
