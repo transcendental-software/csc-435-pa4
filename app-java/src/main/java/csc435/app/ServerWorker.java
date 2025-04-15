@@ -1,9 +1,9 @@
 package csc435.app;
 
-public class IndexWorker implements Runnable {
+public class ServerWorker implements Runnable {
     private IndexStore store;
 
-    public IndexWorker(IndexStore store) {
+    public ServerWorker(IndexStore store) {
         this.store = store;
     }
     
