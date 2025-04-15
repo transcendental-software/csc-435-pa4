@@ -39,7 +39,7 @@ long ClientProcessingEngine::getInfo() {
 void ClientProcessingEngine::connect(std::string serverIP, std::string serverPort) {
     // TO-DO implement connect to server
     // create a new TCP/IP socket and connect to the server
-    // send a REGISTER request message and receive a REGISTER reply message with the client ID
+    // send a REGISTER REQUEST message and receive a REGISTER REPLY message with the client ID
 }
 
 void ClientProcessingEngine::disconnect() {
