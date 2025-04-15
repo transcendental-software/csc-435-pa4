@@ -26,7 +26,6 @@ void ServerAppInterface::readCommands() {
         if (command.size() >= 4 && command.substr(0, 4) == "list") {
             // TO-DO call the getConnectedClients method from the server to retrieve the clients information
             // TO-DO print the clients information
-            std::vector<std::string> clientsInformation = engine->getConnectedClients();
             continue;
         }
 
