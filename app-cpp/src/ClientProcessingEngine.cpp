@@ -8,8 +8,7 @@ IndexResult ClientProcessingEngine::indexFolder(std::string folderPath) {
     IndexResult result = {0.0, 0};
     // TO-DO get the start time
     // TO-DO crawl the folder path and extrac all file paths
-    // TO-DO for each file extract all alphanumeric terms that are larger than 2 characters
-    //       and count their frequencies
+    // TO-DO for each file extract all words/terms and count their frequencies
     // TO-DO increment the total number of bytes read
     // TO-DO for each file prepare an INDEX REQUEST message and send to the server
     //       the document path, the client ID and the word frequencies
