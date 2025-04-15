@@ -1,4 +1,4 @@
-## CSC 435 Programming Assignment 4 (Winter 2025)
+## CSC 435 Programming Assignment 4 (Spring 2025)
 **Jarvis College of Computing and Digital Media - DePaul University**
 
 **Student**: TO-DO-write-student-name (TO-DO-write-email-address)  
@@ -91,7 +91,8 @@ Client 1
 > connect 127.0.0.1 12345
 Connection successful!
 > get_info
-Client ID: 1
+client ID: 1
+>
 ```
 
 Client 2
@@ -100,7 +101,8 @@ Client 2
 > connect 127.0.0.1 12345
 Connection successful!
 > get_info
-Client ID: 2
+client ID: 2
+>
 ```
 
 **Step 3:** list the connected clients on the server:
@@ -108,9 +110,10 @@ Client ID: 2
 Server
 ```
 > list
-Client ID:IP:PORT
-Client 1:127.0.0.1:5746
-Client 2:127.0.0.1:9677
+client ID:IP:PORT
+client 1:127.0.0.1:5746
+client 2:127.0.0.1:9677
+>
 ```
 
 **Step 4:** index files from the clients:
@@ -120,6 +123,7 @@ Client 1
 > index ../datasets/dataset1_client_server/2_clients/client_1
 Completed indexing 68383239 bytes of data
 Completed indexing in 2.974 seconds
+>
 ```
 
 Client 2
@@ -127,6 +131,7 @@ Client 2
 > index ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 65864138 bytes of data
 Completed indexing in 2.386 seconds
+>
 ```
 
 **Step 5:** search files from the clients:
@@ -137,29 +142,56 @@ Client 1
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
 > search child-like
-Search completed in 2.8 seconds
+Search completed in 2.1 seconds
 Search results (top 10 out of 15):
-* Client 2:folder7/Document10926.txt:4
-* Client 1:folder3/Document10379.txt:3
-* Client 2:folder6/Document10866.txt:2
-* Client 2:folder8/Document1108.txt:1
-* Client 2:folder7/folderD/Document11050.txt:1
-* Client 2:folder6/Document10848.txt:1
-* Client 2:folder6/Document1082.txt:1
-* Client 1:folder4/Document10681.txt:1
-* Client 1:folder4/Document10669.txt:1
-* Client 1:folder3/Document10387.txt:1
-```
-
-Client 2
-```
+* client 2:folder7/Document10926.txt:4
+* client 1:folder3/Document10379.txt:3
+* client 2:folder6/Document10866.txt:2
+* client 2:folder8/Document1108.txt:1
+* client 2:folder7/folderD/Document11050.txt:1
+* client 2:folder6/Document10848.txt:1
+* client 2:folder6/Document1082.txt:1
+* client 1:folder4/Document10681.txt:1
+* client 1:folder4/Document10669.txt:1
+* client 1:folder3/Document10387.txt:1
 > search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* Client 2:folder7/folderC/Document10998.txt:6
-* Client 1:folder4/Document10516.txt:3
-* Client 2:folder8/Document11159.txt:2
-* Client 2:folder8/Document11157.txt:2
+* client 2:folder7/folderC/Document10998.txt:6
+* client 1:folder4/Document10516.txt:3
+* client 2:folder8/Document11159.txt:2
+* client 2:folder8/Document11157.txt:2
+>
+```
+
+Client 2
+```> search vortex
+Search completed in 2.8 seconds
+Search results (top 10 out of 27):
+* client 2:folder5/folderB/Document10706.txt:6
+* client 2:folder5/folderB/Document10705.txt:4
+* client 2:folder7/Document1091.txt:3
+* client 1:folder4/Document10681.txt:3
+* client 2:folder6/Document1082.txt:2
+* client 1:folder4/Document1051.txt:2
+* client 1:folder3/folderA/Document10422.txt:2
+* client 1:folder2/Document1033.txt:2
+* client 2:folder8/Document11159.txt:1
+* client 2:folder8/Document11154.txt:1
+> search moon AND vortex
+Search completed in 3.8 seconds
+Search results (top 10 out of 19):
+* client 2:folder5/folderB/Document10706.txt:26
+* client 1:folder4/Document10681.txt:19
+* client 1:folder3/Document1043.txt:19
+* client 1:folder4/Document10600.txt:17
+* client 2:folder8/Document11154.txt:13
+* client 1:folder3/folderA/Document10422.txt:6
+* client 1:folder3/Document10379.txt:6
+* client 1:folder3/folderA/Document10421.txt:6
+* client 2:folder5/folderB/Document10705.txt:5
+* client 1:folder4/Document1033.txt:5
+>
 ```
 
 **Step 6:** close and disconnect the clients:
@@ -198,29 +230,55 @@ Benchmark
 ./build/file-retrieval-benchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-Searching the
+> search the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-Searching child-like
-Search completed in 2.8 seconds
+> search child-like
+Search completed in 2.1 seconds
 Search results (top 10 out of 15):
-* Client 2:folder7/Document10926.txt:4
-* Client 1:folder3/Document10379.txt:3
-* Client 2:folder6/Document10866.txt:2
-* Client 2:folder8/Document1108.txt:1
-* Client 2:folder7/folderD/Document11050.txt:1
-* Client 2:folder6/Document10848.txt:1
-* Client 2:folder6/Document1082.txt:1
-* Client 1:folder4/Document10681.txt:1
-* Client 1:folder4/Document10669.txt:1
-* Client 1:folder3/Document10387.txt:1
-Searching distortion AND adaptation
+* client 2:folder7/Document10926.txt:4
+* client 1:folder3/Document10379.txt:3
+* client 2:folder6/Document10866.txt:2
+* client 2:folder8/Document1108.txt:1
+* client 2:folder7/folderD/Document11050.txt:1
+* client 2:folder6/Document10848.txt:1
+* client 2:folder6/Document1082.txt:1
+* client 1:folder4/Document10681.txt:1
+* client 1:folder4/Document10669.txt:1
+* client 1:folder3/Document10387.txt:1
+> search vortex
+Search completed in 2.8 seconds
+Search results (top 10 out of 27):
+* client 2:folder5/folderB/Document10706.txt:6
+* client 2:folder5/folderB/Document10705.txt:4
+* client 2:folder7/Document1091.txt:3
+* client 1:folder4/Document10681.txt:3
+* client 2:folder6/Document1082.txt:2
+* client 1:folder4/Document1051.txt:2
+* client 1:folder3/folderA/Document10422.txt:2
+* client 1:folder2/Document1033.txt:2
+* client 2:folder8/Document11159.txt:1
+* client 2:folder8/Document11154.txt:1
+> search moon AND vortex
+Search completed in 3.8 seconds
+Search results (top 10 out of 19):
+* client 2:folder5/folderB/Document10706.txt:26
+* client 1:folder4/Document10681.txt:19
+* client 1:folder3/Document1043.txt:19
+* client 1:folder4/Document10600.txt:17
+* client 2:folder8/Document11154.txt:13
+* client 1:folder3/folderA/Document10422.txt:6
+* client 1:folder3/Document10379.txt:6
+* client 1:folder3/folderA/Document10421.txt:6
+* client 2:folder5/folderB/Document10705.txt:5
+* client 1:folder4/Document1033.txt:5
+> search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* Client 2:folder7/folderC/Document10998.txt:6
-* Client 1:folder4/Document10516.txt:3
-* Client 2:folder8/Document11159.txt:2
-* Client 2:folder8/Document11157.txt:2
+* client 2:folder7/folderC/Document10998.txt:6
+* client 1:folder4/Document10516.txt:3
+* client 2:folder8/Document11159.txt:2
+* client 2:folder8/Document11157.txt:2
 ```
 
 **Step 3:** close the server:
@@ -277,7 +335,8 @@ java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalClient
 > connect 127.0.0.1 12345
 Connection successful!
 > get_info
-Client ID: 1
+client ID: 1
+>
 ```
 
 Client 2
@@ -286,7 +345,8 @@ java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalClient
 > connect 127.0.0.1 12345
 Connection successful!
 > get_info
-Client ID: 2
+client ID: 2
+>
 ```
 
 **Step 3:** list the connected clients on the server:
@@ -294,9 +354,10 @@ Client ID: 2
 Server
 ```
 > list
-Client ID:IP:PORT
-Client 1:127.0.0.1:5746
-Client 2:127.0.0.1:9677
+client ID:IP:PORT
+client 1:127.0.0.1:5746
+client 2:127.0.0.1:9677
+>
 ```
 
 **Step 4:** index files from the clients:
@@ -306,6 +367,7 @@ Client 1
 > index ../datasets/dataset1_client_server/2_clients/client_1
 Completed indexing 68383239 bytes of data
 Completed indexing in 2.974 seconds
+>
 ```
 
 Client 2
@@ -313,6 +375,7 @@ Client 2
 > index ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 65864138 bytes of data
 Completed indexing in 2.386 seconds
+>
 ```
 
 **Step 5:** search files from the clients:
@@ -323,29 +386,56 @@ Client 1
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
 > search child-like
-Search completed in 2.8 seconds
+Search completed in 2.1 seconds
 Search results (top 10 out of 15):
-* Client 2:folder7/Document10926.txt:4
-* Client 1:folder3/Document10379.txt:3
-* Client 2:folder6/Document10866.txt:2
-* Client 2:folder8/Document1108.txt:1
-* Client 2:folder7/folderD/Document11050.txt:1
-* Client 2:folder6/Document10848.txt:1
-* Client 2:folder6/Document1082.txt:1
-* Client 1:folder4/Document10681.txt:1
-* Client 1:folder4/Document10669.txt:1
-* Client 1:folder3/Document10387.txt:1
-```
-
-Client 2
-```
+* client 2:folder7/Document10926.txt:4
+* client 1:folder3/Document10379.txt:3
+* client 2:folder6/Document10866.txt:2
+* client 2:folder8/Document1108.txt:1
+* client 2:folder7/folderD/Document11050.txt:1
+* client 2:folder6/Document10848.txt:1
+* client 2:folder6/Document1082.txt:1
+* client 1:folder4/Document10681.txt:1
+* client 1:folder4/Document10669.txt:1
+* client 1:folder3/Document10387.txt:1
 > search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* Client 2:folder7/folderC/Document10998.txt:6
-* Client 1:folder4/Document10516.txt:3
-* Client 2:folder8/Document11159.txt:2
-* Client 2:folder8/Document11157.txt:2
+* client 2:folder7/folderC/Document10998.txt:6
+* client 1:folder4/Document10516.txt:3
+* client 2:folder8/Document11159.txt:2
+* client 2:folder8/Document11157.txt:2
+>
+```
+
+Client 2
+```> search vortex
+Search completed in 2.8 seconds
+Search results (top 10 out of 27):
+* client 2:folder5/folderB/Document10706.txt:6
+* client 2:folder5/folderB/Document10705.txt:4
+* client 2:folder7/Document1091.txt:3
+* client 1:folder4/Document10681.txt:3
+* client 2:folder6/Document1082.txt:2
+* client 1:folder4/Document1051.txt:2
+* client 1:folder3/folderA/Document10422.txt:2
+* client 1:folder2/Document1033.txt:2
+* client 2:folder8/Document11159.txt:1
+* client 2:folder8/Document11154.txt:1
+> search moon AND vortex
+Search completed in 3.8 seconds
+Search results (top 10 out of 19):
+* client 2:folder5/folderB/Document10706.txt:26
+* client 1:folder4/Document10681.txt:19
+* client 1:folder3/Document1043.txt:19
+* client 1:folder4/Document10600.txt:17
+* client 2:folder8/Document11154.txt:13
+* client 1:folder3/folderA/Document10422.txt:6
+* client 1:folder3/Document10379.txt:6
+* client 1:folder3/folderA/Document10421.txt:6
+* client 2:folder5/folderB/Document10705.txt:5
+* client 1:folder4/Document1033.txt:5
+>
 ```
 
 **Step 6:** close and disconnect the clients:
@@ -384,29 +474,55 @@ Benchmark
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalBenchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-Searching the
+> search the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-Searching child-like
-Search completed in 2.8 seconds
+> search child-like
+Search completed in 2.1 seconds
 Search results (top 10 out of 15):
-* Client 2:folder7/Document10926.txt:4
-* Client 1:folder3/Document10379.txt:3
-* Client 2:folder6/Document10866.txt:2
-* Client 2:folder8/Document1108.txt:1
-* Client 2:folder7/folderD/Document11050.txt:1
-* Client 2:folder6/Document10848.txt:1
-* Client 2:folder6/Document1082.txt:1
-* Client 1:folder4/Document10681.txt:1
-* Client 1:folder4/Document10669.txt:1
-* Client 1:folder3/Document10387.txt:1
-Searching distortion AND adaptation
+* client 2:folder7/Document10926.txt:4
+* client 1:folder3/Document10379.txt:3
+* client 2:folder6/Document10866.txt:2
+* client 2:folder8/Document1108.txt:1
+* client 2:folder7/folderD/Document11050.txt:1
+* client 2:folder6/Document10848.txt:1
+* client 2:folder6/Document1082.txt:1
+* client 1:folder4/Document10681.txt:1
+* client 1:folder4/Document10669.txt:1
+* client 1:folder3/Document10387.txt:1
+> search vortex
+Search completed in 2.8 seconds
+Search results (top 10 out of 27):
+* client 2:folder5/folderB/Document10706.txt:6
+* client 2:folder5/folderB/Document10705.txt:4
+* client 2:folder7/Document1091.txt:3
+* client 1:folder4/Document10681.txt:3
+* client 2:folder6/Document1082.txt:2
+* client 1:folder4/Document1051.txt:2
+* client 1:folder3/folderA/Document10422.txt:2
+* client 1:folder2/Document1033.txt:2
+* client 2:folder8/Document11159.txt:1
+* client 2:folder8/Document11154.txt:1
+> search moon AND vortex
+Search completed in 3.8 seconds
+Search results (top 10 out of 19):
+* client 2:folder5/folderB/Document10706.txt:26
+* client 1:folder4/Document10681.txt:19
+* client 1:folder3/Document1043.txt:19
+* client 1:folder4/Document10600.txt:17
+* client 2:folder8/Document11154.txt:13
+* client 1:folder3/folderA/Document10422.txt:6
+* client 1:folder3/Document10379.txt:6
+* client 1:folder3/folderA/Document10421.txt:6
+* client 2:folder5/folderB/Document10705.txt:5
+* client 1:folder4/Document1033.txt:5
+> search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
-* Client 2:folder7/folderC/Document10998.txt:6
-* Client 1:folder4/Document10516.txt:3
-* Client 2:folder8/Document11159.txt:2
-* Client 2:folder8/Document11157.txt:2
+* client 2:folder7/folderC/Document10998.txt:6
+* client 1:folder4/Document10516.txt:3
+* client 2:folder8/Document11159.txt:2
+* client 2:folder8/Document11157.txt:2
 ```
 
 **Step 3:** close the server:
