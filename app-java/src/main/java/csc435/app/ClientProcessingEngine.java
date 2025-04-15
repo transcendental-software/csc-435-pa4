@@ -72,6 +72,7 @@ public class ClientProcessingEngine {
     public void connect(String serverIP, String serverPort) {
         // TO-DO implement connect to server
         // create a new TCP/IP socket and connect to the server
+        // send a REGISTER REQUEST message and receive a REGISTER REPLY message with the client ID
     }
 
     public void disconnect() {
