@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ServerProcessingEngine {
     private IndexStore store;
     // TO-DO keep track of the Dispatcher thread
-    // TO-DO keep track of the Index Worker threads
+    // TO-DO keep track of the server worker threads
     // TO-DO keep track of the clients information
 
     public ServerProcessingEngine(IndexStore store) {
