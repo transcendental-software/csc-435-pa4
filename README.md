@@ -165,7 +165,8 @@ Search results (top 10 out of 4):
 ```
 
 Client 2
-```> search vortex
+```
+> search vortex
 Search completed in 2.8 seconds
 Search results (top 10 out of 27):
 * client 2:folder5/folderB/Document10706.txt:6
@@ -230,10 +231,10 @@ Benchmark
 ./build/file-retrieval-benchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-> search the
+Searching the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-> search child-like
+Searching search child-like
 Search completed in 2.1 seconds
 Search results (top 10 out of 15):
 * client 2:folder7/Document10926.txt:4
@@ -246,7 +247,7 @@ Search results (top 10 out of 15):
 * client 1:folder4/Document10681.txt:1
 * client 1:folder4/Document10669.txt:1
 * client 1:folder3/Document10387.txt:1
-> search vortex
+Searching search vortex
 Search completed in 2.8 seconds
 Search results (top 10 out of 27):
 * client 2:folder5/folderB/Document10706.txt:6
@@ -259,7 +260,7 @@ Search results (top 10 out of 27):
 * client 1:folder2/Document1033.txt:2
 * client 2:folder8/Document11159.txt:1
 * client 2:folder8/Document11154.txt:1
-> search moon AND vortex
+Searching search moon AND vortex
 Search completed in 3.8 seconds
 Search results (top 10 out of 19):
 * client 2:folder5/folderB/Document10706.txt:26
@@ -272,7 +273,7 @@ Search results (top 10 out of 19):
 * client 1:folder3/folderA/Document10421.txt:6
 * client 2:folder5/folderB/Document10705.txt:5
 * client 1:folder4/Document1033.txt:5
-> search distortion AND adaptation
+Searching search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
 * client 2:folder7/folderC/Document10998.txt:6
@@ -409,7 +410,8 @@ Search results (top 10 out of 4):
 ```
 
 Client 2
-```> search vortex
+```
+> search vortex
 Search completed in 2.8 seconds
 Search results (top 10 out of 27):
 * client 2:folder5/folderB/Document10706.txt:6
@@ -474,10 +476,10 @@ Benchmark
 java -cp target/app-java-1.0-SNAPSHOT.jar csc435.app.FileRetrievalBenchmark 127.0.0.1 12345 2 ../datasets/dataset1_client_server/2_clients/client_1 ../datasets/dataset1_client_server/2_clients/client_2
 Completed indexing 134247377 bytes of data
 Completed indexing in 6.015 seconds
-> search the
+Searching search the
 Search completed in 0.4 seconds
 Search results (top 10 out of 0):
-> search child-like
+Searching search child-like
 Search completed in 2.1 seconds
 Search results (top 10 out of 15):
 * client 2:folder7/Document10926.txt:4
@@ -490,7 +492,7 @@ Search results (top 10 out of 15):
 * client 1:folder4/Document10681.txt:1
 * client 1:folder4/Document10669.txt:1
 * client 1:folder3/Document10387.txt:1
-> search vortex
+Searching search vortex
 Search completed in 2.8 seconds
 Search results (top 10 out of 27):
 * client 2:folder5/folderB/Document10706.txt:6
@@ -503,7 +505,7 @@ Search results (top 10 out of 27):
 * client 1:folder2/Document1033.txt:2
 * client 2:folder8/Document11159.txt:1
 * client 2:folder8/Document11154.txt:1
-> search moon AND vortex
+Searching search moon AND vortex
 Search completed in 3.8 seconds
 Search results (top 10 out of 19):
 * client 2:folder5/folderB/Document10706.txt:26
@@ -516,7 +518,7 @@ Search results (top 10 out of 19):
 * client 1:folder3/folderA/Document10421.txt:6
 * client 2:folder5/folderB/Document10705.txt:5
 * client 1:folder4/Document1033.txt:5
-> search distortion AND adaptation
+Searching search distortion AND adaptation
 Search completed in 3.27 seconds
 Search results (top 10 out of 4):
 * client 2:folder7/folderC/Document10998.txt:6
