@@ -17,12 +17,12 @@ public class ServerProcessingEngine {
     }
 
     public void spawnWorker() {
-        // TO-DO create and start a new Index Worker thread
+        // TO-DO create and start a new Server Worker thread
     }
 
     public void shutdown() {
         // TO-DO signal the Dispatcher thread to shutdown
-        // TO-DO join the Dispatcher and Index Worker threads
+        // TO-DO join the Dispatcher and Server Worker threads
     }
 
     public ArrayList<String> getConnectedClients() {
